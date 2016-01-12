@@ -76,11 +76,11 @@
         ?>
         <div class="main">
             <div class="content">
-				<table>
+				<table class="bordered">
 					<tr>
 						<td colspan="4">
 							<form action="additem.php"> 
-								<input type="submit" value="Anzeige erstellen">
+                                <button  class="waves-effect waves-light btn" type="submit" value="Anzeige erstellen"><i class="material-icons right">add_box</i>Anzeige erstellen</button>
 							</form>
 						</td>
 					</tr>
@@ -92,14 +92,15 @@
 								echo '<td>'.$value.'</td>';
 								echo '<td>
 										<form id="edit" action="edititem.php" method="post" enctype="multipart/form-data" >
-											<button value="'.$interid[$key].'" name="edit">Editieren</button>
+											<button class="waves-effect waves-light btn" value="'.$interid[$key].'" name="edit"><i class="material-icons">build</i></button>
 										</form>
 									</td>';
 								echo '<td>
 										
-											<button  onclick="DeleteOnClick('.$interid[$key].')">Löschen</button>
+											<button class="waves-effect waves-light btn red" onclick="DeleteOnClick('.$interid[$key].')"><i class="material-icons">delete</i></button>
 										
 									</td>';
+
 								echo '</tr>';
 							}
 						}             
@@ -108,22 +109,27 @@
             </div>
         </div>
 		
-		<div id="popup"  style=" width:100%;
+	
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script>$(".button-collapse").sideNav();</script>
+        	<div id="popup"  style=" width:100%;
 												height: 2000px;
 												background-color: rgba(0,0,0,0.5);
 												overflow:hidden;
-												position:fixed;
+												position:absolute;
+                                                z-index:999;
 												top:0px;">
 			<div id="ppc" style="margin:40px auto 0px auto;
 												width:250px;
-												height: 40px;
+												height: 80px;
 												padding:10px;
 												
 												background-color: #c5c5c5;
 												border-radius:5px;
 												box-shadow: 0px 0px 10px #000;">
 				<div id="ppt" style="align:center;" >
-					<p id="BestP">Sind Sie sicher?</p>
+					<p id="BestP">Möchten Sie diese Anzeige wirklich entfernen?</p>
 					<form id="delete" action="" method="post" enctype="multipart/form-data" >
 						<button id="jaB" value="" name="delete">Ja</button>
 						<button id="neinB" onclick="PopUpHide(); return false;">Nein</button>
@@ -133,9 +139,6 @@
 			
 			</div>
 		</div>
-        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script type="text/javascript" src="js/materialize.min.js"></script>
-        <script>$(".button-collapse").sideNav();</script>
     </body>
 </html>
 

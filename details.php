@@ -96,7 +96,7 @@
 					
 				}
 				else {
-					echo "document.getElementById('ppt').innerHTML='Herzlichen Glückwunsch! Sie haben den Artikel erworben. Die Kontaktdaten des Verkäufers: ".$contact."';
+					echo "document.getElementById('ppt').innerHTML='Sie haben diesen Artikel erworben. Die Kontaktdaten des Verkäufers: ".$contact."';
 					PopUpShow();";
 				}	
 				?>			
@@ -129,14 +129,14 @@
                 </div>
                 
                 <div class="row">
-                    <?php echo '<div class="col s12 m12 l12 text_center">'.$interMaintext.'</div>';?>
+                    <?php echo '<div class="col s12 m12 l12 text_center"><p style="word-break:break-all;word-wrap:break-word">'.$interMaintext.'</p></div>';?>
                 </div>
                     
                 <?php
                     for ($i = 1; $i <= 10; $i++) {
                         if (isset($interTexts[$i])) {
                             echo '<div class="row">
-                                    <div class="col s12 m12 l12">'.$interTexts[$i].'</div></div>';
+                                    <div class="col s12 m12 l12"><p style="word-break:break-all;word-wrap:break-word">'.$interTexts[$i].'</p></div></div>';
                         }
                         if (isset($interImages[$i])) {
                             echo '<div class="row">

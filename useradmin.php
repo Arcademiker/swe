@@ -106,8 +106,8 @@
 								} else {
 									echo "<td>normal</td>";
 								}
-								
-								echo '<td>
+								echo '</tr><tr>';
+								echo '<td colspan=2>
 										<button  onclick="DeleteOnClick('.$key.',1)">Löschen</button>
 										
 									</td>';
@@ -116,6 +116,7 @@
 										
 									</td>';
 								echo '</tr>';
+								echo '<tr><td colspan=3><hr></td></tr>';
 							}
 						}             
 					 ?>
@@ -130,7 +131,7 @@
 												top:0px;">
 			<div id="ppc" style="margin:40px auto 0px auto;
 												width:250px;
-												height: 40px;
+												height: 80px;
 												padding:10px;
 												
 												background-color: #c5c5c5;
